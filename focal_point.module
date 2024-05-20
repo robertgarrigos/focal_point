@@ -634,7 +634,7 @@ function _focal_point_supported_widget_type($type) {
  */
 function _focal_point_supported_field_type($type) {
   $enabled_for = config_get('focal_point.settings', 'focal_point_enabled_for');
-  return in_array($type, $enabled_for, TRUE);
+  return is_array($enabled_for) ? in_array($type, $enabled_for, TRUE) : FALSE;
 }
 
 /**
